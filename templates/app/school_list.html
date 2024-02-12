@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'app/parent.html' %}
+{% block title %}
+    <title>SchoolList</title>
+{% endblock %}
+{% block body_block %}
     <center><h1>List View has School objects</h1>
-
         {% for school in schools %}
             <a href="{{school.pk}}"><h1>{{school.Sname}}</h1></a>
         {% endfor %}
     </center> 
-</body>
-</html>
+{% endblock %}
