@@ -1,0 +1,16 @@
+{% extends 'app/parent.html' %}
+{% block title %}
+    <title>SchoolList</title>
+{% endblock %}
+{% block body_block %}
+    <center>
+        <h1>Are u sure you want to delete {{schoolobject.Sname}}</h1>
+        <form method="POST">
+            {% csrf_token %}
+
+            <input type="submit" value="Yes-Delete" class="btn btn-primary">
+        </form>
+        <a href="{% url 'school_list' %}" class="btn btn-success mt-4">No Take me back to list</a>
+        <a href="{% url 'SchoolDetail' pk=schoolobject.pk %}" class="btn btn-success mt-4">No Take me back to detail</a>
+    </center> 
+{% endblock %}
